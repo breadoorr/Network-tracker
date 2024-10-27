@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Network Request Tracker",
+  "version": "1.0",
+  "description": "Track and display the number of successfully completed network requests.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "css": ["contentStyle.css"]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
